@@ -76,7 +76,8 @@ class DigitalLibraryPage:
     def get_iiif_image_url(self):
         """Returns the IIIF social media image of the page."""
         # Exercise 2 - fill in the implementation here
-        pass
+        
+        iiif_image_url = self.soup.head.find(property="og:image")['content']
 
 
 class NamedEntityDocument:
