@@ -78,6 +78,7 @@ class DigitalLibraryPage:
     def get_iiif_image_url(self):
         """Returns the IIIF social media image of the page."""
         # Exercise 2 - fill in the implementation here
+        response = requests.get(self.get_metadata_url())
         soup = BeautifulSoup(response.text)
         iiif_image_url = self.soup.head.find(property="og:image")['content']
 
