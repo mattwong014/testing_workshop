@@ -11,7 +11,7 @@ from spacy import displacy
 
 from .exceptions import FileNotFoundAtUrl
 
-soup = BeautifulSoup(response.text)
+
 
 # We only want the ner pipeline, so we can disable the rest to save resources.
 nlp = en_core_web_sm.load(disable=["tok2vec", "tagger", "parser", "senter", "attribute_ruler", "lemmatizer"])
@@ -78,7 +78,7 @@ class DigitalLibraryPage:
     def get_iiif_image_url(self):
         """Returns the IIIF social media image of the page."""
         # Exercise 2 - fill in the implementation here
-        
+        soup = BeautifulSoup(response.text)
         iiif_image_url = self.soup.head.find(property="og:image")['content']
 
 
