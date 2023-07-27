@@ -11,6 +11,8 @@ from spacy import displacy
 
 from .exceptions import FileNotFoundAtUrl
 
+soup = BeautifulSoup(response.text)
+
 # We only want the ner pipeline, so we can disable the rest to save resources.
 nlp = en_core_web_sm.load(disable=["tok2vec", "tagger", "parser", "senter", "attribute_ruler", "lemmatizer"])
 
